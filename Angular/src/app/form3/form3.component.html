@@ -1,0 +1,24 @@
+<form [formGroup]="myForm">
+
+    Email<input formControlName="email">
+    <span *ngIf="email.invalid && email.touched">
+        Your email does not look right
+    </span><br><br>
+  
+  
+    Password<input type ="password" formControlName="password">
+    <span *ngIf="password.invalid && password.touched">
+        That password feels weak
+    </span><br><br>
+  
+    Age<input formControlName="age">
+    <span *ngIf="age.errors?.min && age.touched">
+        {{ age.errors.min.actual }} is young to use
+    </span><br><br>
+    <span *ngIf="age.errors?.max && age.touched">
+        {{ age.errors.max.actual }} is too you old to use 
+    </span><br><br>
+  
+    <button [disabled]="myForm.invalid">Login!</button>
+  
+  </form>

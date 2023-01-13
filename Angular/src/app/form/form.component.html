@@ -1,0 +1,6 @@
+<form [formGroup]="myForm">
+    Value: {{myForm.value | json}}
+    <hr>
+    Email:<input formControlName="email"><br><br>
+    Message:<input formControlName="message">
+  </form>
